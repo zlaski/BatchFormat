@@ -3,7 +3,9 @@
     <Metadata>
         <Identity Id="BatchFormat.b8cd9eae-10d6-40d8-bd13-bf71a15de555" Version="1.0" Language="en-US" Publisher="Company" />
         <DisplayName>BatchFormat</DisplayName>
-        <Description>Empty VSIX Project.</Description>
+        <Description>Code Batch Format Tool
+Areas: Solution, Project, Folder, File.
+Function: Remove, Sort, Using, Format Document, and more combinations.</Description>
     </Metadata>
     <Installation AllUsers="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
