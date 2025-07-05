@@ -13,7 +13,7 @@
     <ProjectGuid>{A742CE8B-5E6E-462E-9399-01BC2A4CDC9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BatchFormat</RootNamespace>
+    <RootNamespace>YongFa365.BatchFormat</RootNamespace>
     <AssemblyName>BatchFormat</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -45,11 +45,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BatchFormatPackage.cs" />
-    <Compile Include="BatchFormat.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BatchFormat.vsct</DependentUpon>
-    </Compile>
+    <VSCTCompile Include="BatchFormat.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
     <Compile Include="Guids.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="OptionPage.cs">
@@ -68,10 +66,6 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.14.2094" NoWarn="NU1604" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BatchFormat.vsct">
-      <Generator>VsctGenerator</Generator>
-      <LastGenOutput>BatchFormat.cs</LastGenOutput>
-    </Content>
     <Content Include="Resources\Icon.png" />
     <Content Include="Resources\Images.png" />
     <Content Include="Resources\Preview.png" />
@@ -94,4 +88,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+
+  <Target Name="Scrub" BeforeTargets="CoreClean">
+    <Message Text="Scrubbing build directories . . ." Importance="high" />
+    <RemoveDir Directories="$(IntermediateOutputPath)" />
+    <RemoveDir Directories="$(OutputPath)" />
+  </Target>
+
 </Project>
