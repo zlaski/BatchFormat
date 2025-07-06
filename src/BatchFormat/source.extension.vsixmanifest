@@ -6,8 +6,10 @@
         <Description>Code Batch Format Tool
 Areas: Solution, Project, Folder, File.
 Function: Remove, Sort, Using, Format Document, and more combinations.</Description>
+        <Icon>Resources/Icon.png</Icon>
+        <PreviewImage>Resources/Preview.png</PreviewImage>
     </Metadata>
-    <Installation AllUsers="true">
+    <Installation InstalledByMsi="false" AllUsers="false" SystemComponent="false" Scope="ProductExtension">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
